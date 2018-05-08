@@ -1,0 +1,11 @@
+<launch>
+
+	<include file="$(find cwru_davinci_simulation)/launch/rn_configuration.launch"/>
+
+  <node name="spawn_model_1" pkg="gazebo_ros" type="spawn_model" args="-sdf -database needle_r -model some_name -x -0.101582 -y -0.000880 -z 0.802" respawn="false" />
+
+  <node name="spawn_model_2" pkg="gazebo_ros" type="spawn_model" args="-sdf -database small_tissue -model tissue -x 0.041978 -y -0.078699 -z 0.722634 -R 0.0 -P 0.0 -Y 0.0" respawn="false" />
+
+  <node name="fcon" pkg="sticky_fingers" type="finger_control_dummy_node" args="sticky_finger/PSM1fingertip1 sticky" respawn="false" />
+
+</launch>
